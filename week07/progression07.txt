@@ -1,0 +1,13 @@
+// week07 
+
+จารย์สอนเรื่อง dom แล้วก็พวก Root node 
+
+logical node = node นี้ไม่มีอยู่จริง ประมาณว่ามันเอาไว้ครอบ node บนๆสุดให้ทำงาน  
+
+// classwork 
+ใช้ DOM ในการสร้าง tag ในหน้า index.html  เราสามารถใช้ innerHTML ได้เพราะมันมอง tag ที่เราป้อนให้มันเป็น tag 
+Ex. 
+    p1Element.innerHTML = "<i>Sample Italic Text</i>"  
+    -- innerHTML ก็จะมอง tag <i> ว่าเป็น tag ใน html -- 
+
+    แต่ innerText กับ textContent จะมองเป็น text หมดเลย 
