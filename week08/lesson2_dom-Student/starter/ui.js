@@ -20,11 +20,19 @@ function addQuote(text, author) {
 }
 
 function renderQuotes() {
+    // clear
+    quoteList.innerHTML = ""; 
 
+    // loop 
+    quotes.forEach((quote) => {
+        const p = document.createElement("p") 
+        p.textContent = `"${quote.text}" - ${quote.author}` 
+        quoteList.appendChild(p);
+    })
 } 
 
 // Step 4: Add test quotes manually and call renderQuotes()
 // Example:
-// addQuote('Stay hungry, stay foolish.', 'Steve Jobs')
-// renderQuotes();
+addQuote('Stay hungry, stay foolish.', 'Steve Jobs')
+renderQuotes();
 
