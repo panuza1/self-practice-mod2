@@ -6,7 +6,9 @@ const btn = document.getElementById('submit')
 const text_action = document.querySelector("form>p")
 
 btn.addEventListener("submit", (event) => {
-    e.preventDefault(); 
+    e.preventDefault();
+
+
 })
 
 
