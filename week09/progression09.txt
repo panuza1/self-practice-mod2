@@ -1,0 +1,10 @@
+1. addEventListener / removeEventListener – การเพิ่มและลบ event handler ทั้งแบบ anonymous และแบบ named function
+2. Event bubbling & capturing – event ผ่าน element (เช่น button → div → body)
+3. event object – ใช้ดู `target`, `currentTarget`, `eventPhase`
+4. Prevent default behavior – เช่น ยกเลิกการทำงานของ `<a>` ด้วย `e.preventDefault()`
+5. DOMContentLoaded / load event – ตรวจว่า DOM หรือหน้าเว็บโหลดเสร็จเมื่อไหร่
+6. blur event – ตรวจว่า input ว่างไหมเมื่อผู้ใช้เลื่อนออกจากช่อง
+7. resize / scroll event – ตรวจการเปลี่ยนขนาดหน้าต่างและการเลื่อนหน้า
+8. keyboard event (keyup) – ตรวจปุ่มที่พิมพ์ใน input
+9. input event – แสดงค่าที่ผู้ใช้พิมพ์แบบ real-time
+

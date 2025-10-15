@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manipulating Elements</title>
+</head>
+<body>
+    <h3>SIT @ KMUTT Restaurant</h3>
+
+    <div class="menu">
+        <ul id="appetizer">
+            <li class="vegan">Vegetable Rolls</li>
+            <li class="meat">Chicken Wings</li>
+            <li class="meat">Tuna Sandwich</li>
+        </ul>
+
+        <ul id="soup">
+            <li class="meat">Spicy Bacon-Corn Soup</li>
+            <li class="vegan">Vegetable Soup</li>
+            <li class="meat">Beef Soup</li>
+            <li class="vegan">Coconut Soup</li>
+        </ul>
+    </div>
+
+    <p>*** Enjoy Your Meal, Thank You ***</p>
+    <script>
+        const htmlElement = document.querySelector("html")
+        console.log(htmlElement.parentNode)   // #document root node 
+        console.log(htmlElement.parentElement)   // null 
+
+        const soup_menu = document.querySelector("#soup")
+
+        const first_child_node = soup_menu.firstElementChild
+        const next_first_child_node = first_child_node.nextElementSibling   
+        const last_child_node = soup_menu.lastElementChild
+        const previous_last_child_node = last_child_node.previousElementSibling 
+
+        console.log(first_child_node) 
+        // <li class="meat">Spicy Bacon-Corn Soup</li>
+        console.log(next_first_child_node)
+        // <li class="vegan">Vegetable Soup</li>
+        console.log(last_child_node) 
+        // <li class="vegan">Coconut Soup</li>
+        console.log(previous_last_child_node)
+
+        console.log("end")
+        const meat_menu = document.querySelectorAll(".meat")
+        meat_menu.forEach((meat_menu) => console.log(meat_menu))
+    </script>    
+</body> 
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <script src="main.js"></script>
+    <div id="exampleElement" style="font-size: 10pt;">
+        this is some <span style="display: none">hidden</span> text content .
+    </div>
+    <script>
+        // the nodeName, nodeType, nodeValue 
+        document.addEventListener("DOMContentLoaded", () => {
+            const divElement = document.getElementById("exampleElement");
+            const divChild = divElement.childNodes;
+
+            divChild.forEach((child) => {
+                console.log(child.nodeName);
+                console.log(child.nodeType);
+                console.log(child.nodeValue);
+            });
+            console.log(divChild.length)
+            // Element 
+            console.log("---------- Element ---------")
+            let div = document.createElement("div")
+            document.body.appendChild(div)  //  <div></div>
+
+            // attr 
+            const element = document.getElementById("exampleElement")
+            console.log(element.nodeType)   // 1 
+            console.log(element.attributes[0])  // id= 
+            console.log(element.attributes[0].nodeType) //  2
+            console.log(element.attributes[0].value) // exampleElement
+            console.log(element.attributes[1].value) // font-size: 10pt;  
+            console.log(element.attributes[0].ownerElement) 
+            // <div id="exampleElement" style="font-size: 10pt;">...</div>
+            const divStyleAttr = element.getAttribute('style') 
+            console.log(divStyleAttr)  // font-size: 10pt     
+        });
+
+
+    </script>
+</body>
+
+</html>

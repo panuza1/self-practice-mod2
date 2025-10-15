@@ -1,0 +1,3 @@
+querySelectorAll คืน NodeList (forEach ได้), getElementsByTagName/ByClassName คืน HTMLCollection (แปลงเป็น Array ก่อนใช้ forEach)
+ใช้ textContent.trim() เมื่อเทียบข้อความ และเช็ก null ก่อนเรียก insert/remove/replace
+firstElementChild = ลูก element ตัวแรก (ข้าม text)

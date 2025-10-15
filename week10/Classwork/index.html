@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page Customization</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .settings-panel {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="settings-panel">
+        <h2>ตั้งค่าการแสดงผล</h2>
+
+        <div class="form-group">
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#FFFFFF">
+        </div>
+
+        <div class="form-group">
+            <label for="fontColor">Font Color:</label>
+            <input type="color" id="fontColor" value="#000000">
+        </div>
+
+        <div class="form-group">
+            <label for="fontSize">Font Size:</label>
+            <select id="fontSize">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+
+        <div>
+            <button id="saveBtn">Save</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        const bgColor = document.getElementById("bgColor");
+        const fontColor = document.getElementById("fontColor");
+        const fontSize = document.getElementById("fontSize");
+        const submit = document.getElementById("saveBtn");
+        const reset = document.getElementById("resetBtn");
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const saveBgcolor = localStorage.getItem("bgColor");
+            const savefontColor = localStorage.getItem("fontColor");
+            const savefontSize = localStorage.getItem("fontSize");
+
+            if (saveBgcolor) {
+                document.body.style.backgroundColor = saveBgcolor;
+                bgColor.value = saveBgcolor;
+            }
+            if (savefontColor) {
+                document.body.style.color = savefontColor;
+                fontColor.value = savefontColor;
+            }
+            if (savefontSize) {
+                document.body.style.fontSize = savefontSize;
+                fontSize.value = savefontSize;
+            }
+        });
+
+        submit.addEventListener("click", () => {
+            document.body.style.backgroundColor = bgColor.value;
+            document.body.style.color = fontColor.value;
+            document.body.style.fontSize = fontSize.value;
+
+            localStorage.setItem("bgColor", bgColor.value);
+            localStorage.setItem("fontColor", fontColor.value);
+            localStorage.setItem("fontSize", fontSize.value);
+        });
+
+        reset.addEventListener("click", () => {
+            localStorage.clear();
+            location.reload();
+        });
+
+        
+    </script>
+
+</body>
+
+</html>

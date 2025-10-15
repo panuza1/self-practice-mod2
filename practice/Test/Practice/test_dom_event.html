@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event + DOM Challenges Starter (with Comments)</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  section { border: 1px solid #ddd; padding: 12px; margin-bottom: 16px; border-radius: 8px; background: #f9f9f9; }
+  .output { margin-top: 8px; padding: 6px; border: 1px dashed #ccc; min-height: 20px; }
+  .controls { margin-top: 8px; display:flex; gap:8px; flex-wrap:wrap; }
+</style>
+</head>
+<body>
+
+<h1>Event + DOM Challenges Starter (with Comments)</h1>
+<p>แต่ละ section มี comment บอกว่า JS ต้องทำอะไร</p>
+
+<!-- 1. Counter -->
+<section id="task-1">
+  <h2>1. Counter (รีเซ็ตเมื่อครบ 10)</h2>
+  <button id="btn-counter">Click me</button>
+  <div class="output" id="counter-display">Count: 0</div>
+  <!-- JS Task:
+    1. สร้างตัวแปร count
+    2. เพิ่มค่า count ทุกครั้งที่กดปุ่ม
+    3. อัพเดทข้อความใน counter-display
+    4. ถ้า count == 10 ให้รีเซ็ตเป็น 0
+    5. เปลี่ยนสีปุ่มแบบ random เมื่อรีเซ็ต
+  -->
+</section>
+
+<!-- 2. Forbidden Word Checker -->
+<section id="task-2">
+  <h2>2. Forbidden Word Checker</h2>
+  <input id="forbidden-input" placeholder="พิมพ์ข้อความ...">
+  <div class="output" id="forbidden-output">สถานะ: ปลอดภัย</div>
+  <!-- JS Task:
+    1. จับ event 'input' ของ forbidden-input
+    2. ตรวจข้อความว่ามีคำต้องห้าม เช่น "bad"
+    3. ถ้ามีคำต้องห้าม เปลี่ยน background ของ output เป็นสีแดง
+    4. ถ้าไม่มีคำต้องห้าม เปลี่ยน background เป็นสีเขียว
+    5. อัพเดทข้อความใน forbidden-output
+  -->
+</section>
+
+<!-- 3. To-do List -->
+<section id="task-3">
+  <h2>3. Dynamic To-do List</h2>
+  <input id="todo-input" placeholder="พิมพ์งานแล้ว Enter">
+  <div class="controls">
+    <button id="clear-done">ลบทั้งหมดที่ทำเสร็จแล้ว</button>
+  </div>
+  <ul id="todo-list"></ul>
+  <!-- JS Task:
+    1. จับ event 'keydown' หรือ 'keypress' ของ todo-input (Enter)
+    2. เพิ่ม li ลงใน ul#todo-list
+    3. เมื่อคลิก li ให้ toggle class "done"
+    4. ปุ่ม clear-done: ลบ li ที่มี class done
+  -->
+</section>
+
+<!-- 4. Hover Maze -->
+<section id="task-4">
+  <h2>4. Hover Maze Challenge</h2>
+  <div id="maze" style="display:grid; grid-template-columns: repeat(10, 24px); gap:4px;"></div>
+  <div class="output" id="maze-result">Ready</div>
+  <!-- JS Task:
+    1. สร้าง grid ของ div (ช่อง path และ wall)
+    2. ใช้ mouseover ตรวจว่าผู้เล่นโดน wall หรือไม่
+    3. แสดงข้อความ "Game Over" ถ้าโดน wall
+    4. แสดง "You Win!" ถ้าผ่าน path ถึง finish
+  -->
+</section>
+
+<!-- 5. Quiz -->
+<section id="task-5">
+  <h2>5. Quiz</h2>
+  <div id="quiz-question">Question will appear here</div>
+  <div class="controls" id="quiz-choices">
+    <button class="choice">A</button>
+    <button class="choice">B</button>
+    <button class="choice">C</button>
+    <button class="choice">D</button>
+  </div>
+  <div class="output">Score: <span id="quiz-score">0</span></div>
+  <!-- JS Task:
+    1. แสดงคำถามและตัวเลือก
+    2. เมื่อคลิกตัวเลือก:
+       - ถ้าถูก: เพิ่ม score, สุ่มคำถามใหม่
+       - ถ้าผิด: เอาปุ่มตัวเลือกนั้นออก
+    3. อัพเดท score ใน quiz-score
+  -->
+</section>
+
+<!-- 6. Dark/Light Theme -->
+<section id="task-6">
+  <h2>6. Dark/Light Theme + localStorage</h2>
+  <button id="toggle-dark">Toggle theme</button>
+  <div class="output" id="theme-status">Current: light</div>
+  <style>
+    body.dark { background:#111; color:#eee; }
+    body.dark section { background:#1a1a1a; border-color:#333; }
+  </style>
+  <!-- JS Task:
+    1. เพิ่ม/ลบ class 'dark' บน body
+    2. บันทึกสถานะลง localStorage
+    3. โหลดสถานะจาก localStorage ตอนเปิดหน้า
+    4. อัพเดทข้อความ theme-status
+  -->
+</section>
+
+<!-- 7. Drag & Drop Card -->
+<section id="task-7">
+  <h2>7. Drag & Drop Card Game</h2>
+  <div class="controls" id="cards">
+    <div draggable="true" class="card" id="card-A">A</div>
+    <div draggable="true" class="card" id="card-B">B</div>
+    <div draggable="true" class="card" id="card-C">C</div>
+  </div>
+  <div class="controls" id="drop-zones" style="margin-top:10px;">
+    <div class="dropzone" id="zone-1" style="width:80px;height:60px;border:1px dashed #888;display:flex;align-items:center;justify-content:center">Zone 1</div>
+    <div class="dropzone" id="zone-2" style="width:80px;height:60px;border:1px dashed #888;display:flex;align-items:center;justify-content:center">Zone 2</div>
+    <div class="dropzone" id="zone-3" style="width:80px;height:60px;border:1px dashed #888;display:flex;align-items:center;justify-content:center">Zone 3</div>
+  </div>
+  <div class="output" id="drag-result"></div>
+  <!-- JS Task:
+    1. ใช้ dragstart บนการ์ด
+    2. ใช้ dragover และ drop บน dropzone
+    3. ตรวจว่าการ์ดถูก drop ลง zone ถูกต้องหรือไม่
+    4. แสดงผลใน drag-result
+  -->
+</section>
+
+<!-- 8. Virtual Keyboard -->
+<section id="task-8">
+  <h2>8. Virtual Keyboard Detector</h2>
+  <input id="vk-input" placeholder="พิมพ์ที่นี่...">
+  <div class="output">Last key: <span id="last-key">—</span></div>
+  <!-- JS Task:
+    1. จับ keydown/keyup หรือ input ของ vk-input
+    2. อัพเดท last-key
+    3. ถ้า Enter: เคลียร์ input
+    4. ถ้า Backspace: ลบตัวอักษรสุดท้ายใน last-key
+  -->
+</section>
+
+<!-- 9. Dynamic Table -->
+<section id="task-9">
+  <h2>9. Dynamic Table Editor</h2>
+  <div class="controls">
+    <button id="add-row">เพิ่มแถว</button>
+    <button id="add-col">เพิ่มคอลัมน์</button>
+  </div>
+  <table id="editable-table" border="1" cellpadding="6" style="border-collapse:collapse; min-width:400px; margin-top:8px;">
+    <thead>
+      <tr id="table-head">
+        <th>H1</th><th>H2</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr><td class="editable">Cell 1</td><td class="editable">Cell 2</td></tr>
+    </tbody>
+  </table>
+  <div class="output" id="table-status">Status: ready</div>
+  <!-- JS Task:
+    1. เพิ่มแถวใหม่และคอลัมน์ใหม่
+    2. คลิก cell -> แปลงเป็น input เพื่อแก้ไข
+    3. กด Enter -> บันทึกค่ากลับ td
+    4. ถ้า cell ว่าง -> highlight สีแดง
+  -->
+</section>
+
+<!-- 10. Typing Speed Game -->
+<section id="task-10">
+  <h2>10. Typing Speed Game</h2>
+  <div class="controls">
+    <button id="start-typing">Start</button>
+    <button id="next-word" class="hidden">Next</button>
+  </div>
+  <div style="margin-top:8px;">
+    <div class="output" id="word-display">Press Start</div>
+    <input id="typing-input" placeholder="พิมพ์คำที่เห็น..." disabled>
+  </div>
+  <div class="output" id="typing-stats">Speed: — WPM</div>
+  <!-- JS Task:
+    1. สุ่มคำแสดงใน word-display
+    2. เปิด input ให้พิมพ์
+    3. ตรวจคำพิมพ์ real-time
+    4. วัดเวลาและคำนวณ WPM
+    5. แสดงผลใน typing-stats
+  -->
+</section>
+
+<script>
+  // เว้นไว้ให้ใส่ JS ของคุณ
+</script>
+
+</body>
+</html>

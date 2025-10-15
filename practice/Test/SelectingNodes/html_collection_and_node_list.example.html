@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      This is a Text Node
+      <div>This is a div Element Node#1</div>
+      <div>This is a div Element Node#2</div>
+    </div>
+    <script>
+        const myApp = document.getElementById("app") 
+        const children_html = myApp.children
+        const child_nodes_list = myApp.childNodes
+        
+        Array.from(children_html).forEach((Element) => console.log(Element))   
+        // HTMLCollection มันจะมอง เป็น div div 2 ตัว
+
+        console.log("end")
+
+        child_nodes_list.forEach((e) => console.log(e))
+        // NodeList (5)   childNode -> มันจะมองเป็น ทุกตัวที่อยู่ใน id app คือมันจะมี text, div, text, div ,text   เป็น 5 ตัว 
+    </script>
+  </body>
+ </html> 
