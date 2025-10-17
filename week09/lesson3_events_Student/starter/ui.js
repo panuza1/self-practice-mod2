@@ -59,7 +59,7 @@ function createQuoteElement(quote) {
     delete_btn.dataset.id = quote.id
 
     edit_btn.addEventListener("click", () => updateQuoteInDOM(quote))
-    delete_btn.addEventListener("click", () => deleteQuoteFromDOM(id))
+    delete_btn.addEventListener("click", () => deleteQuoteFromDOM(quote.id))
 
     div.append(p1, p2, edit_btn,delete_btn)
     return div;
@@ -73,8 +73,8 @@ function addQuoteToDOM(quote) {
 }
 function updateQuoteInDOM(quote) {
     idInput.value = quote.id
-    contentInput = quote.content
-    authorInput = quote.author
+    contentInput.value = quote.content
+    authorInput.value = quote.author
 }
 function deleteQuoteFromDOM(id) {
     quotes = quotes.filter((q) => q.id !== id)
