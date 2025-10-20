@@ -72,7 +72,7 @@ function showRandomQuote() {
   randomDisplay.innerHTML = `<blockquote>"${random.content}"</blockquote><p>— ${random.author}</p>`;
 }
 
-// Handle form submission
+// Handle form submission 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -103,4 +103,4 @@ form.addEventListener("submit", (e) => {
 });
 
 // Show random quote when button is clicked
-randomBtn.addEventListener("click", showRandomQuote);
+randomBtn.addEventListener("click", showRandomQuote); 

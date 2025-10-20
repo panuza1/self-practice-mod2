@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quote Manager PRO</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Quote Manager PRO</h1>
+
+    <!-- Search / Filter / Sort -->
+    <section id="controls">
+      <input type="text" id="search" placeholder="Search by quote or author..." />
+
+      <select id="filterCategory">
+        <option value="all">All Categories</option>
+      </select>
+
+      <select id="sort">
+        <option value="default">Sort by...</option>
+        <option value="author">Author (A → Z)</option>
+        <option value="category">Category</option>
+        <option value="latest">Latest Added</option>
+      </select>
+
+      <button id="showFavoritesBtn">Favorites</button>
+    </section>
+
+    <hr />
+
+    <!-- Add / Edit Form -->
+    <h2>Add / Edit Quote</h2>
+    <form id="quoteForm">
+      <input type="hidden" id="quoteId" />
+      <input type="text" id="content" placeholder="Enter quote content" required />
+      <input type="text" id="author" placeholder="Enter author" required />
+      <input type="text" id="category" placeholder="Enter category (e.g. Life, Love...)" required />
+      <button type="submit">Save Quote</button>
+    </form>
+
+    <hr />
+
+    <!-- Random Quote -->
+    <button id="randomBtn">Show Random Quote</button>
+    <div id="randomQuoteDisplay"></div>
+
+    <hr />
+
+    <!-- Quote List -->
+    <h2>All Quotes</h2>
+    <section id="quote-list"></section>
+
+    <!-- Statistics -->
+    <section id="stats">
+      <p>Total Quotes: <span id="totalQuotes">0</span></p>
+      <p>Favorites: <span id="totalFavorites">0</span></p>
+      <p>Categories: <span id="totalCategories">0</span></p>
+    </section>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
