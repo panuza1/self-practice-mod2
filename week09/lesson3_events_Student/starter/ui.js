@@ -49,6 +49,8 @@ function updateQuoteInDOM(quote) {
 // Delete quote from array and re-render
 function deleteQuoteFromDOM(id) {
   quotes = quotes.filter((q) => q.id !== id);
+  //   ถ้า ไม่เท่ากัน (จริง) → เก็บ quote นั้นไว้ใน array ใหม่
+  // ถ้า เท่ากัน (เท็จ) → เอา quote นั้นออก
   renderQuotes();
 }
 
@@ -69,7 +71,7 @@ function showRandomQuote() {
   }
 
   const random = quotes[Math.floor(Math.random() * quotes.length)];
-  randomDisplay.innerHTML = `<blockquote>"${random.content}"</blockquote><p>— ${random.author}</p>`;
+  randomDisplay.innerHTML = ` <blockquote>"${random.content}"</blockquote><p>— ${random.author}</p>`;
 }
 
 // Handle form submission 
@@ -91,7 +93,7 @@ form.addEventListener("submit", (e) => {
     // Add new quote
     const newQuote = {
       id: Date.now().toString(),
-      content,
+      content,  
       author,
     };
     quotes.push(newQuote); 

@@ -19,6 +19,7 @@ function createQuoteElement(quote) {
   addEditDeleteButton(divElement, quote.id);
   return divElement;
 }
+
 function addEditDeleteButton(quoteElement, quoteId) {
   const editButton = document.createElement("button");
   editButton.classList.add("edit-btn");
