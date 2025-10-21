@@ -31,7 +31,7 @@ function addEditDeleteButton(quoteElement, quoteId) {
     const divElement = e.target.parentElement;
     const quoteContent = divElement.firstElementChild;
     const quoteAuthor = quoteContent.nextElementSibling;
-    idInput.value = id;
+    idInput.value = id; 
     contentInput.value = quoteContent.textContent;
     authorInput.value = quoteAuthor.textContent;
   });

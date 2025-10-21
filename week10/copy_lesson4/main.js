@@ -1,4 +1,3 @@
-// import { addQuote, deleteQuote, updateQuote, getAllQuotes } from "../lesson4_localstorage_Student/lesson4_localstorage_Student/starter/js/quote"
 let quotes = [];
 
 const quoteList = document.getElementById("quote-list");
@@ -101,6 +100,7 @@ form.addEventListener("submit", (e) => {
         };
         quotes.push(newQuote);
     }
+    saveQuotes()
     renderQuotes();
     form.reset();
     id_input.value = "";
@@ -108,3 +108,16 @@ form.addEventListener("submit", (e) => {
 
 // Show random quote when button is clicked
 randomBtn.addEventListener("click", showRandomQuote);
+
+function loadQuotes() {
+    const saved = localStorage.getItem("quotes")   // ใช้ getItem ใช้อ่าน 
+    if(saved) {
+        quotes = JSON.parse(saved)     // แปลง string กลับเป็น array/object   
+    }
+    renderQuotes()
+}
+function saveQuotes() {
+    localStorage.setItem("quotes", JSON.stringify(quotes))   
+}
+
+loadQuotes()
