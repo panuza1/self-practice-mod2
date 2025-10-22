@@ -9,6 +9,9 @@
     <div id="exampleElement" style="font-size: 10pt;">
         this is some <span style="display: none">hidden</span> text content .
     </div>
+    <div id="parentElement">
+        <span id="childElement">foo bar</span>
+    </div>
     <script>
         // the nodeName, nodeType, nodeValue 
         document.addEventListener("DOMContentLoaded", () => {
@@ -33,11 +36,25 @@
             console.log(element.attributes[0].nodeType) //  2
             console.log(element.attributes[0].value) // exampleElement
             console.log(element.attributes[1].value) // font-size: 10pt;  
-            console.log(element.attributes[0].ownerElement) 
+            console.log(element.attributes[0].ownerElement)
             // <div id="exampleElement" style="font-size: 10pt;">...</div>
-            const divStyleAttr = element.getAttribute('style') 
+            const divStyleAttr = element.getAttribute('style')
             console.log(divStyleAttr)  // font-size: 10pt     
+
+            // test insertBefore()
+            // Create a new, plain <span> element
+            const sp1 = document.createElement("span");
+
+            // Get the reference element
+            const sp2 = document.getElementById("childElement");
+            // Get the parent element
+            const parentDiv = sp2.parentNode;
+
+            // Insert the new element into before sp2
+            parentDiv.insertBefore(sp1, sp2);
+
         });
+
 
 
     </script>

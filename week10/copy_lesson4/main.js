@@ -41,7 +41,7 @@ function updateQuoteInDOM(quote) {
     id_input.value = quote.id;
     content_input.value = quote.content;
     author_input.value = quote.author;
-}
+}   
 
 // Delete quote from array and re-render
 function deleteQuoteFromDOM(id) {
